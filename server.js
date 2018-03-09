@@ -1,5 +1,7 @@
 const express = require('express');
 const hbs = require('hbs'); 
+const port = process.env.PORT || 1337;
+
 var app = express();
 
 hbs.registerPartials(__dirname+'/views/partials')
@@ -32,4 +34,4 @@ app.get('/bad',(req, res)=>{
         errorMessage : 'Unable to handle request'
     });
 });
- app.listen(1337);
+ app.listen(port);
